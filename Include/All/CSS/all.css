@@ -1,0 +1,228 @@
+#total {
+	display: block;
+	width: 1111px;
+	height: 1240px;
+	background-color: white;
+	margin: 0 auto;
+	float: top;
+	text-align: center;
+	border-color: red;
+	border-style: solid;
+	border-width: 0px;
+	position: relative;
+}
+
+#top-header {
+	
+	display: block;
+	width: 1111px;
+	height: 200px;
+	background-color: white;
+	margin: 0 auto;
+	float: top;
+	text-align: center;
+	background-image: url("../Imgs/mouth.jpg");
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	position: relative;
+}
+
+#inner {
+	text-align: left;
+	position: absolute;
+	background-color: white;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	top: 80%;
+	left: 5%;
+	font-size: 40px;
+
+	/*margin: 1 auto;*/
+}
+
+#nav {
+	display: block;
+	width: 1111px;
+	height: 35px;
+	background-color: white;
+	margin: 0 auto;
+	float: top;
+	text-align: center;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	position: relative;
+}
+
+img {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;	
+}
+
+#corpo {
+	display: block;
+	width: 1111px;
+	height: 1000px;
+	background-color: white;
+	margin: 0 auto;
+	float: top;
+	text-align: center;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	position: relative;	
+}
+
+#corpo-img {
+	display: block;
+	width: 1111px;
+	height: 1000px;
+	background-color: white;
+	margin: 0 auto;
+	float: top;
+	text-align: center;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	position: relative;	
+	background-image: url("../Imgs/smile3.png");
+}
+
+#corpo-img-2 {
+	display: block;
+	width: 1111px;
+	height: 1000px;
+	background-color: white;
+	margin: 0 auto;
+	float: top;
+	text-align: center;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	position: relative;	
+	background-image: url("../Imgs/note.png");
+}
+
+#tab-nav-td {
+	font-size: 24px;
+	width: 10%;
+	background-color: #e6e6e6;
+}
+
+#tab-nav-td2 {
+	font-size: 24px;
+	width: 20%;
+	background-color: #f2f2f2;
+}
+
+#tab-td1 {
+	font-size: 50px;
+	text-align: justify;
+	/*background-color: #f2f2f2; */
+	padding: 50px;
+}
+
+#tab-td1:hover {
+	background-color: #f9f9f9;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FAFAFA;
+}
+
+
+a:link, a:visited, a:active {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	background: #FAFAFA;
+}
+
+/* agendar */
+#inner-body {
+	position: absolute;
+	background-color: #f6feff;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	top: 25%;
+	left: 12%;
+	/* font-size: 0px; */
+}
+
+#tab-agendar {
+	width: 889px;
+	height: 300px;
+	border-collapse: collapse;
+}
+
+#tab-agendar-td {
+	font-size: 22px;
+	padding-left: 3px;
+	/* text-align: left; */
+}
+
+#mult {
+	width: 95%;
+	height: 85%;
+	font-size: 22px;
+	padding: 0px;
+}
+
+#sel {
+	
+	width: 95%;
+	height: 85%;
+	font-size: 22px;
+	padding: 0px;
+}
+
+/*	Contato	*/
+#corpo-img-3 {
+	display: block;
+	width: 1111px;
+	height: 1000px;
+	background-color: white;
+	margin: 0 auto;
+	float: top;
+	text-align: center;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	position: relative;	
+	background-image: url("../Imgs/telefonista.png");
+}
+
+#tab-contato {
+	width: 889px;
+	height: 200px;
+}
+
+#tab-contato-td {
+	font-size: 22px;
+	padding-left: 1px;
+}
+
+#tab-contato-td:hover {
+	background-color: #b4f7ff;
+	font-weight: bold;
+	text-shadow: 1px 2px white;
+}
+
+#tab-contato-td-2 {
+	font-size: 22px;
+	padding-left: 1px;
+	background-color: #fcfffc;
+}
+
+#tab-contato-td-2:hover {
+	text-shadow: 1px 1px black;
+}

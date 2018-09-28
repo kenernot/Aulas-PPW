@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta lang="pt-br">
+	</head>
+	
+	<body>
+		<form name="form1" action="calculadora.php" method="post" target="_Blank">
+			<table align="center" border="2" style="margin-top:10%;"> 
+				<tr>
+					<th>Número 1:</th>
+					<td><input type="text" name="valor1" style="width:100%"></td>
+				</tr>
+				<tr>
+					<th>Número 1:</th>
+					<td><input type="text" name="valor2" style="width:100%"></td>
+				</tr>
+				<tr>
+					<th>Operação:</th>
+					<td>
+						<select name="operacao">
+							<option value="+" >Adição</option>
+							<option value="-">Subtração</option>
+							<option value="/">Divisão</option>
+							<option value="*">Multiplicação</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="Submit" name="submit"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

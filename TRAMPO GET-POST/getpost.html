@@ -1,0 +1,115 @@
+﻿<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta lang="pt-br">
+	</head>
+	
+	<style>
+		td {
+			text-align:center;
+		}
+		body {
+			background-color: gray;
+		}
+		table {
+			background-color: white;
+		}
+	</style>
+	
+	<body>
+			<table align="center" border="2" style="margin-top:10%;"> 
+				<tr>
+					<th colspan="3">MÉTODOS GET POST</th>
+				</tr>
+				<tr>
+					<td></td>
+					<th>GET</th>
+					<th>POST</th>
+				</tr>
+				<tr>
+					<th>Visibilidade</th>
+					<td>String de dados anexada à URL</td>
+					<td>Encapsulado</td>
+				</tr>
+				<tr>
+					<th>Tamanho</th>
+					<td>Até 1024 caracteres</td>
+					<td>Não há limitações de comprimento</td>
+				</tr>
+				<tr>
+					<th>Performance</th>
+					<td>Mais rápido</td>
+					<td>Mais lerdo devido ao encapsulamento</td>
+				</tr>
+				<tr>
+					<th>Tipos</th>
+					<td>Apenas textos</td>
+					<td>Texto e dados binários</td>
+				</tr>
+				<tr>
+					<th>Favoritos/Bookmarks</th>
+					<td>Pode ser armazenado em <br>cachê ou em favoritos</td>
+					<td>Não é possível</td>
+				</tr>
+				<tr>
+					<th>Método Padrão</th>
+					<td>Sim</td>
+					<td>Não</td>
+				</tr>
+				<tr>
+					<th>Dados</th>
+					<td>ASCII</td>
+					<td>ASCII/UCS</td>
+				</tr>
+			</table>
+			
+			<table align="center" border="0" style="margin-top: 15px; background-color: lightgray"> 
+				<tr>
+				
+					<td>
+						<form name="form1" action="getpost.html" method="GET">
+							<table align="center" border="2"> <!-- GET --> 
+								<tr>
+									<td>Usuario</td>
+									<td><input type="text" name="user" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<td>Senha</td>
+									<td><input type="password" name="pass" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<td colspan="2"><input type="submit" value="GET" name="submit"></td>
+								<tr>
+							</table>	
+						</form>
+					</td>
+					
+					
+					<td>
+						<form name="form2" action="getpost.html" method="POST">
+							<table align="center" border="2"> <!-- GET --> 
+								<tr>
+									<td>Usuario</td>
+									<td><input type="text" name="user_" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<td>Senha</td>
+									<td><input type="password" name="pass_" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<td colspan="2"><input type="submit" value="POST" name="submit"></td>
+								<tr>
+							</table>	
+						</form>
+					</td>
+					
+				</tr>
+			</table>
+			<!--
+		<form name="form1" action="getpost.html" method="get">
+			
+		</form>
+		<input type="submit" value="GET" name="submit" form="form1">
+		-->
+	</body>
+</html>

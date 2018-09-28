@@ -1,0 +1,63 @@
+body, 
+.menu,
+.sub-menu {
+  margin: 0px 0px 0px 0px;
+  padding: 6px 6px 4px 6px;
+}
+.clearfix:after{ /*Vem depois do elemento menu*/
+    content: '.'; /*aparece o background*/
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+.menu,
+.sub-menu {
+    list-style: none; /*Some as 'bolinhas' da lista*/
+    background: #000;
+}
+.sub-menu {
+    background: #444; /*Ao passar o mouse muda a cor*/
+}
+.menu a { /*Texto do menu*/
+    text-decoration: none;
+    display: block;
+    padding: 20px; /*Modifica o espaçamento do texto no menu*/
+    color: #fff; /*Cor Branca do texto*/
+    font-family: sans-serif;
+    font-size: 14px;
+    text-transform: uppercase; /*Transforma tudo em Caixa Alta*/
+    font-weight: 700; /*Negrito*/
+}
+.menu li { /*Vale para todos os li*/
+    position: relative;
+}
+.menu > li { /*Só seleciona os filhos da ul*/
+    float: left; /*flutua para a esquerda*/
+}
+.menu > li:hover {
+    background: #444; /*Ao passar o mouse muda a cor*/
+}
+.menu li:hover > .sub-menu {
+    display: block; /*Ao passar o mouse aparece*/
+}
+.sub-menu {
+    display: none; /*Não aparece o menu se não clicar*/
+    position: absolute;
+    min-width: 150px; /*Largura mínima*/
+}
+.sub-menu li:hover { /*Demonstra onde está o mouse sobre o item*/
+    background: #555;
+}
+.sub-menu .sub-menu {/*Sub do Sub Menu*/
+    top: 0;
+    left: 100%;
+}
+.form{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: none;
+}

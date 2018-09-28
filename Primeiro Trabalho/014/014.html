@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta lang="pt-br">
+		<script>
+			function valida() {
+				if (form1.valor1.value == "" || form1.valor2.value == "") {
+					alert("Campos obrigatórios faltando!");
+					form1.valor1.focus();
+					return false;
+				} else if (parseInt(form1.valor1.value) > parseInt(form1.valor2.value)) {
+					alert("O primeiro número não pode ser maior que o segundo!");
+					form1.valor1.focus();
+					return false;					
+				}
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form name="form1" action="014_n.php" method="post" target="_Blank">
+			<table align="center" border="1"> 
+				<tr>
+					<td>
+						Número 1:
+					</td>
+					<td>
+						<input type="text" name="valor1">
+					</td>
+				</tr>			
+				<tr>
+					<td>
+						Número 2:
+					</td>
+					<td>
+						<input type="text" name="valor2">
+					</td>
+				</tr>					
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="Submit" name="submit" onclick="valida()">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

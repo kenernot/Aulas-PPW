@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta lang="pt-br">
+	</head>
+	
+	<body>
+		<form name="form1" action="formulario.php" method="post" target="_Blank">
+			<table align="center" border="2" style="margin-top:10%;"> 
+				<tr>
+					<th>Nome:</th>
+					<td><input type="text" name="nome" style="width:100%"></td>
+				</tr>
+				<tr>
+					<th>E-Mail:</th>
+					<td><input type="text" name="email" style="width:100%"></td>
+				</tr>
+				<tr>
+					<th>Sexo:</th>
+					<td><input type="radio" name="sexo" value="Masculino" checked>Masculino<input type="radio" name="sexo" value="Feminino">Feminino</td>
+				</tr>
+				<tr>
+					<th>Estudante:</th>
+					<td><input type="checkbox" name="valor1" value="Sim"></td>
+				</tr>
+				<tr>
+					<th>País:</th>
+					<td>
+						<select name="pais">
+							<option value="Brasil">Brasil</option>
+							<option value="Chile">Chile</option>
+							<option value="Paraguai">Paraguai</option>
+							<option value="Uruguai">Uruguai</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="Submit" name="submit"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

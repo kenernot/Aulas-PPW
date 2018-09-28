@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta lang="pt-br">
+		<script>
+			function valida() {
+				if (form1.valor1.value == "") {
+					alert("Campos obrigatórios faltando!");
+					form1.valor1.focus();
+					return false;
+				} else if (parseInt(form1.valor1.value) > 99) {
+					alert("Não pode ser maior que 99");
+					form1.valor1.focus();
+					return false;					
+				}
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form name="form1" action="013_n.php" method="post" target="_Blank">
+			<table align="center" border="1"> 
+				<tr>
+					<td>
+						Número:
+					</td>
+					<td>
+						<input type="text" name="valor1">
+					</td>
+				</tr>			
+				
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="Submit" name="submit" onclick="valida()">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

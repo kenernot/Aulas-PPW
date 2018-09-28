@@ -1,0 +1,8 @@
+	O PHP (um acrônimo recursivo para PHP: Hypertext Preprocessor) é uma linguagem de script open source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML.
+	
+	Existem três áreas principais onde os scripts PHP são usados:
+	•Scripts no lado do servidor (server-side). 
+	•Scripts de linha de comando.
+	•Escrever aplicações desktop.
+	
+	

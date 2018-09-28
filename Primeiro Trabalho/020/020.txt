@@ -1,0 +1,6 @@
+1- Irá funcionar;
+2- Não, pois além do php estar colado com o Echo, está faltando aspas duplas depois do ponto e vírgula.
+3- Não, pois uma variável deve iniciar sempre com um caracter alfabético!
+4- Não, pois está faltando faltando o simbolo '=' para recepção de valor .
+5- Não, pois está sendo feito uma comparação usando '==' sem lugar de retorno.
+6- Não, pois deveria ser uma comparação de valores e não uma recepção, teria de ser '==' ao invés de '='.
