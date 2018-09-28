@@ -81,7 +81,7 @@
 					<table align="center" border="0" class="loginTable"> 
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="titulo">Título</td>
-							<td class="tdCadastro" colspan='4'><input type="text" name="titulo" ID="titulo"  class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro" colspan='4'><input type="text" required name="titulo" ID="titulo"  class="editCadastro" style='width:100%;'></td>
 						</tr>
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="tipo">Tipo:</td>
@@ -115,7 +115,7 @@
 							<td class="labelCadastro"><label for="duracao">Duração:</td>
 							<td class="tdCadastro"><input type="text" name="duracao" ID="duracao" class="editCadastro" style='width:100%;'></td>
 							<td class="labelCadastro"><label for="datalancamento">Lançamento:</td>
-							<td class="tdCadastro"><input type="text" name="datalancamento" ID="datalancamento" class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro"><input type="date" name="datalancamento" ID="datalancamento" class="editCadastro" style='width:100%;'></td>
 						</tr>
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="nacionalidade">Nacionalidade:</td>
@@ -144,7 +144,7 @@
 							
 							
 							<td class="tdCadastro">
-								<select class='comboCadastro' multiple name="generosmidia[]" id="generosmidia" style='min-width: 90px; width: 100%;' size="6">
+								<select class='comboCadastro' required multiple name="generosmidia[]" id="generosmidia" style='min-width: 90px; width: 100%;' size="6">
 								</select>
 							</td>
 						</tr>

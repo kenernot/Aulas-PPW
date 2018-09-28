@@ -28,31 +28,31 @@
 							<td class="myLabel"><label for="usuario">Usuário</td>
 						</tr>
 						<tr>
-							<td class="myEditLabel"><img src="Imagens/user.png" class="imgUSERPASS"><input type="text" name="usuario" ID="usuario"  class="myUser"></td>
+							<td class="myEditLabel"><img src="Imagens/user.png" class="imgUSERPASS"><input type="text" required name="usuario" ID="usuario"  class="myUser"></td>
 						</tr>
 						<tr>
 							<td class="myLabel"><label for="senha">Senha</label></td>
 						</tr>
 						<tr>
-							<td class="myEditLabel"><img src="Imagens/lock.png" class="imgUSERPASS"><input type="password" name="senha" id="senha" class="myUser"></td>
+							<td class="myEditLabel"><img src="Imagens/lock.png" class="imgUSERPASS"><input type="password" required name="senha" id="senha" class="myUser"></td>
 						</tr>						
 						<tr>	
 							<td class="myLabel"><label for="confirmarsenha">Confirmar Senha</label></td>
 						</tr>
 						<tr>
-							<td class="myEditLabel"><img src="Imagens/lock.png" class="imgUSERPASS"><input type="password" name="confirmarsenha" id="confirmarsenha" class="myUser"></td>
+							<td class="myEditLabel"><img src="Imagens/lock.png" class="imgUSERPASS"><input type="password" required name="confirmarsenha" id="confirmarsenha" class="myUser"></td>
 						</tr>
 						<tr>
 							<td class="myLabel"><label for="email">Email</label></td>
 						</tr>
 						<tr>
-							<td class="myEditLabel"><img src="Imagens/email.png" class="imgUSERPASS"><input type="text" name="email" id="email" class="myUser"></td>
+							<td class="myEditLabel"><img src="Imagens/email.png" class="imgUSERPASS"><input type="text" required name="email" id="email" class="myUser"></td>
 						</tr>
 						<tr>
 							<td class="myLabel"><label for="confirmaremail">Confirmar Email</label></td>
 						</tr>
 						<tr>
-							<td class="myEditLabel"><img src="Imagens/email.png" class="imgUSERPASS"><input type="text" name="confirmaremail" id="confirmaremail" class="myUser"></td>
+							<td class="myEditLabel"><img src="Imagens/email.png" class="imgUSERPASS"><input type="text" required name="confirmaremail" id="confirmaremail" class="myUser"></td>
 						</tr>						
 						<tr>
 							<td colspan="4" align="center" class="myLabel"><input type="submit" value="CADASTRAR" name="submit" class="submitButton"></td>
