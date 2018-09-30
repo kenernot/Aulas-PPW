@@ -1,7 +1,9 @@
 <?php
 	// Inicia sessões 
 	session_start(); 
-
+	if(!isset($_SESSION["usuario"]) && !isset($_SESSION["nivel"])) { 
+		header("Location: F_Login.php"); 
+	}
 ?>
 
 <script language="JavaScript">
@@ -11,7 +13,7 @@
 				location.href = "F_Cadusu.php";
 				break;
 			case 'Login':
-				location.href = "F_Login.php";
+				location.href = "index.php";
 				break;
 			case 'CadMidia':
 				location.href = "F_CadMidia.php";
@@ -21,6 +23,9 @@
 				break;
 			case 'RelUsuario':
 				location.href = "F_RelUsuario.php";
+				break;
+			case 'Permissao':
+				location.href = "F_Permissao.php";
 				break;
 			default:
 				break;
@@ -42,22 +47,23 @@
 			<div class="centro2 escuro">
 				<div class="conteudo">
 					<table align="center" border="0" class="loginTable"> 
-						<tr>
-							<td colspan="4" align="center" class="myLabel"><input type="button" value="LOGIN" class="submitButton" onClick="Go('Login')"></td>
-						</tr>
-						<tr>
-							<td colspan="4" align="center" class="myLabel"><input type="button" value="CADASTRO USUARIO" class="submitButton" onClick='Go("CadUsu")'></td>
-						</tr>
+						<form name="form1" action="B_index.php" method="post">
+							<tr>
+								<td colspan="4" align="center" class="myLabel"><input type="submit" value="LOGOUT" class="submitButton BGRed"></td>
+							</tr>
+						</form>
 						
 						<?php
 								if(isset($_SESSION["usuario"]) && isset($_SESSION["nivel"])) { 
 									if ($_SESSION["nivel"] == '99') {
 										$TXT = '"'.'CadMidia'.'"';
-										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='CADASTRO DE MIDIA' class='submitButton' onClick='Go($TXT)'></td></tr>";
+										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='CADASTRO DE MÍDIA' class='submitButton' onClick='Go($TXT)'></td></tr>";
 										$TXT = '"'.'RelUsuario'.'"';
-										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='REL. DE USUARIO' class='submitButton' onClick='Go($TXT)'></td></tr>";
+										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='REL. DE USUÁRIO' class='submitButton BGGreen' onClick='Go($TXT)'></td></tr>";
 										$TXT = '"'.'RelMidia'.'"';
-										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='REL. DE MIDIA' class='submitButton' onClick='Go($TXT)'></td></tr>";
+										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='REL. DE MÍDIA' class='submitButton BGGreen' onClick='Go($TXT)'></td></tr>";
+										$TXT = '"'.'Permissao'.'"';
+										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='PERMISSÃO' class='submitButton' onClick='Go($TXT)'></td></tr>";
 									}
 								} 
 						?>

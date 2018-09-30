@@ -24,7 +24,6 @@ if (!empty($usuario) && !empty($senha) && !empty($email)) {
 			?>
 		<script language="JavaScript">
 			alert("Senha/Email já cadastrados, favor escolher outro!");
-			window.history.go(-1);
 		</script>
 		<?php
 		}else{
@@ -33,9 +32,10 @@ if (!empty($usuario) && !empty($senha) && !empty($email)) {
 		?>
 			<script language="JavaScript">
 				alert("Cadastrado com sucesso!");
-				window.history.go(-1);
+				window.location = "http://127.0.0.1/aulas-ppw/Tela%20Login/F_Login.php";
 			</script>
 	<?php
+
 		}
 	}
 } else {
@@ -46,4 +46,5 @@ if (!empty($usuario) && !empty($senha) && !empty($email)) {
 	</script>
 	<?php
 }
+
 ?>

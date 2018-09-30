@@ -81,15 +81,15 @@
 	border: 0;
 }
 
+.BGGreen {
+	background-color: #059A28;
+}
+
+.BGRed {
+	background-color: #E52424;
+}
+
 .submitButton:hover {
-	border-radius: 10px 10px 10px 10px;
-	margin-top: 15px;
-	font-size: 30px;
-	background-color: 	#1E90FF;
-	color: white;
-	height: 60px;
-	width: 350px;
-	border: 0;
 	text-shadow: 0 0 30px white, 0 0 10px white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
 }

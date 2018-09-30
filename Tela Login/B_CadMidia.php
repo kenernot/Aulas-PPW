@@ -33,7 +33,14 @@ if (!isset($generosmidia)) {
 		window.history.go(-1);
 	</script>
 	<?php
-} else {
+} else if (empty($titulo)) {
+	?>
+	<script language="JavaScript">
+		alert("Título vazio!");
+		window.history.go(-1);
+	</script>
+	<?php
+}	else {
 	//Aqui deve começar cadastro
 	$idUsuario = $_SESSION["idUsuario"];
 	$sql = "INSERT INTO MIDIA (idTipoMidia, idMidiaClassificacao, idUsuario, titulo, duracao, elenco, nacionalidade, sinopse, datalancamento, qtdepisodios, qtdtemporadas) values ($tipo, $classificacao, $idUsuario, '$titulo', '$duracao', '$elenco', '$nacionalidade', '$sinopse', $datalancamento, $episodios, $temporadas);";

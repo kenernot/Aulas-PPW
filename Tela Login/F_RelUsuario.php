@@ -22,7 +22,8 @@
 		<form name="form1" action="B_Login.php" method="post">
 			<div class="centro2 escuro">
 				<div class="conteudo">
-					<table align="center" border="1" class="loginTable"> 
+					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/aulas-ppw/Tela%20Login/F_Login.php';" name="back" class="submitButton">
+					<table align="center" border="1" class="loginTable" style="margin-top: 20px;"> 
 						<tr>
 							<th class="RelTH">USUARIO</th>
 							<th class="RelTH">NIVEL</th>
@@ -43,6 +44,7 @@
 
 						?>
 					</table>
+					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/aulas-ppw/Tela%20Login/F_Login.php';" name="back" class="submitButton">
 				</div>
 			</div>
 		</form>
