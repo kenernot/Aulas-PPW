@@ -24,6 +24,7 @@ if (!empty($usuario) && !empty($senha) && !empty($email)) {
 			?>
 		<script language="JavaScript">
 			alert("Senha/Email já cadastrados, favor escolher outro!");
+			window.location = "http://127.0.0.1/aulas/Aulas-PPW/Tela%20Login/";
 		</script>
 		<?php
 		}else{
@@ -32,7 +33,7 @@ if (!empty($usuario) && !empty($senha) && !empty($email)) {
 		?>
 			<script language="JavaScript">
 				alert("Cadastrado com sucesso!");
-				window.location = "http://127.0.0.1/aulas-ppw/Tela%20Login/F_Login.php";
+				window.location = "http://127.0.0.1/aulas/Aulas-PPW/Tela%20Login/";
 			</script>
 	<?php
 
