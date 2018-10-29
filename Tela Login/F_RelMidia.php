@@ -23,7 +23,7 @@
 		<form name="form1" action="B_Login.php" method="post">
 			<div class="centro2 escuro">
 				<div class="conteudo">
-					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/aulas/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton">
+					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton">
 					<table align="center" border="2" class="loginTable" style="margin-top: 20px;"> 
 						<tr class="loginTable_tr">
 							<th class="RelTH">TITULO</th>
@@ -48,7 +48,7 @@
 
 						?>
 					</table>
-					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/aulas/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton">
+					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton">
 				</div>
 			</div>
 		</form>

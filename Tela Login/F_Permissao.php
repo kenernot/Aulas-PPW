@@ -25,7 +25,7 @@
 		<form name="form1" action="B_Permissao.php" method="post">
 			<div class="centro2 claro">
 				<div class="conteudo">
-					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/aulas/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton">
+					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton">
 					<table align="center" border="0" class="loginTable"> 
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="usuario">Usuario:</td>

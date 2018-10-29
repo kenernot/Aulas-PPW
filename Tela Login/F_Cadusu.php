@@ -22,7 +22,7 @@
 		<form name="usuario" action="B_Cadusu.php" method="post">
 			<div class="centro2 escuro">
 				<div class="conteudo">
-				<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/aulas/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton"><br>
+				<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton"><br>
 				<img src="Imagens/Usuario.png" class="loginImg">
 					<table align="center" border="0" class="loginTable"> 
 						<tr class="loginTable_tr">
