@@ -24,6 +24,9 @@
 			case 'RelUsuario':
 				location.href = "F_RelUsuario.php";
 				break;
+			case 'VerMidia':
+				location.href = "F_VerMidia.php";
+				break;
 			case 'Permissao':
 				location.href = "F_Permissao.php";
 				break;
@@ -55,6 +58,8 @@
 						
 						<?php
 								if(isset($_SESSION["usuario"]) && isset($_SESSION["nivel"])) { 
+										$TXT = '"'.'VerMidia'.'"';
+										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='VISUALIZAR MIDIAS' class='submitButton' onClick='Go($TXT)'></td></tr>";
 									if ($_SESSION["nivel"] == '99') {
 										$TXT = '"'.'CadMidia'.'"';
 										echo "<tr><td colspan='4' align='center' class='myLabel'><input type='button' value='CADASTRO DE MÍDIA' class='submitButton' onClick='Go($TXT)'></td></tr>";

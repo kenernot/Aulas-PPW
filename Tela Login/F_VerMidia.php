@@ -22,10 +22,55 @@
 	if ($_SESSION["nivel"] == 99) {
 		$super = true;
 	}
-	echo $super
 
  ?>
- 		
+ 		 <script language="JavaScript">
+			function move(MenuOrigem, MenuDestino){
+				var arrMenuOrigem = new Array();
+				var arrMenuDestino = new Array();
+				var arrLookup = new Array();
+				var i;
+				for (i = 0; i < MenuDestino.options.length; i++){
+					arrLookup[MenuDestino.options[i].text] = MenuDestino.options[i].value;
+					arrMenuDestino[i] = MenuDestino.options[i].text;
+				}
+				var fLength = 0;
+				var tLength = arrMenuDestino.length;
+				for(i = 0; i < MenuOrigem.options.length; i++){
+					arrLookup[MenuOrigem.options[i].text] = MenuOrigem.options[i].value;
+					if (MenuOrigem.options[i].selected && MenuOrigem.options[i].value != ""){
+						arrMenuDestino[tLength] = MenuOrigem.options[i].text;
+						tLength++;
+					}
+					else{
+						arrMenuOrigem[fLength] = MenuOrigem.options[i].text;
+						fLength++;
+					}
+				}
+				arrMenuOrigem.sort();
+				arrMenuDestino.sort();
+				MenuOrigem.length = 0;
+				MenuDestino.length = 0;
+				var c;
+				for(c = 0; c < arrMenuOrigem.length; c++){
+					var no = new Option();
+					no.value = arrLookup[arrMenuOrigem[c]];
+					no.text = arrMenuOrigem[c];
+					MenuOrigem[c] = no;
+				}
+				for(c = 0; c < arrMenuDestino.length; c++){
+					var no = new Option();
+					no.value = arrLookup[arrMenuDestino[c]];
+					no.text = arrMenuDestino[c];
+					MenuDestino[c] = no;
+			   }
+			}
+			function selectAll(box) {
+				for(var i=0; i<box.length; i++) {
+					box.options[i].selected = true;
+				}
+			}
+		</script>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -35,7 +80,8 @@
 	
 	<body>
 
-		<form name="form1" action="B_CadMidia.php" method="post">
+		<form name="form1" action="B_VerMidia.php" method="post">
+		<input type="text" hidden name="idmidia" id="idmidia">
 			<div class="centro2 claro">
 				<div class="conteudo">
 					<input type="button" value="VOLTAR" onclick="window.location = 'http://127.0.0.1/Aulas-PPW/Tela%20Login/';" name="back" class="submitButton">
@@ -109,9 +155,34 @@
 							<td class="tdCadastro"><input type="text" <?php if (!$super) {echo "disabled";} ?> name="nacionalidade" ID="nacionalidade" class="editCadastro" style='width:100%;'></td>
 						</tr>
 						<tr class="loginTable_tr">
-							<td class="labelCadastro" colspan='0' style='text-align:center;'><label for="generosmidia">Gêneros da mídia:</td>
-							<td class="labelCadastro" colspan='2' style='text-align:center;'><input type="text" <?php if (!$super) {echo "disabled";} ?> name="generosmidia" ID="generosmidia" <?php if (!$super) {echo "disabled";} ?> class="editCadastro" style='width:100%;'></td>
-							<td class="labelCadastro" colspan='2' style='text-align:center;'></td>
+						<?php
+							if (!$super) {
+								echo	"<td class='labelCadastro' colspan='0' style='text-align:center;'><label for='generosmidia'>Gêneros da mídia:</td>";
+								echo	"<td class='labelCadastro' colspan='2' style='text-align:center;'><input type='text' disabled name='generosmidia' ID='generosmidia' class='editCadastro' style='width:100%;'></td>";
+								echo	"<td class='labelCadastro' colspan='2' style='text-align:center;'></td>";
+							} else {
+								echo	"<tr class='loginTable_tr'>";
+								echo		"<td class='labelCadastro' colspan='0' style='text-align:center;'><label for='elenco'>Gêneros disponíveis:</td>";
+								echo		"<td class='labelCadastro' colspan='2' style='text-align:center;'></td>";
+								echo		"<td class='labelCadastro' colspan='0' style='text-align:center;'><label for='elenco'>Gêneros da mídia:</td>";
+								echo	"</tr>";
+								echo	"<tr>";
+								echo	"<td class='tdCadastro'>";
+								echo		"<select class='comboCadastro' multiple name='generosdisponiveis' id='generosdisponiveis' style='min-width: 90px;'  size='6'>";
+								echo		"</select>";
+								echo	"</td>";
+								echo	"<td class='tdCadastro' colspan=2>";
+								echo		"<input type='button' onClick='move(this.form.generosdisponiveis,this.form.generosmidia)' value='>>' class='submitButton' style='width:100%; height: 50%;'>";
+								echo		"<input type='button' onClick='move(this.form.generosmidia,this.form.generosdisponiveis)' value='<<' class='submitButton' style='width:100%; height: 100%;'>";
+								echo	"</td>";
+								echo	"<td class='tdCadastro'>";
+								echo		"<select class='comboCadastro' required multiple name='generosmidia[]' id='generosmidia' style='min-width: 90px; width: 100%;' size='6'>";
+								echo		"</select>";
+								echo	"</td>";
+								echo "</tr>";
+
+							}
+						?>
 						</tr>
 						
 						<tr class="loginTable_tr">
@@ -133,7 +204,7 @@
 						</tr>
 
 
-						
+						<?php if ($super) {echo "<tr><td colspan='4'  align='center' class='myLabel'><input onClick='selectAll(this.form.generosmidia);' type='submit' value='ATUALIZAR' name='submit' class='submitButton'></td></tr>";} ?>
 					</table>
 					
 				</div>
@@ -149,7 +220,7 @@
 					$.getJSON('B_VerMidia_Mostrar.php?search=',{lista: $('#lista').val()}, function(data){	
 						$('#titulo').val(data[0].titulo);
 						$('#classificacao').val(data[0].classificacao);
-						
+						$('#idmidia').val(data[0].idmidia);
 						$('#tipo').val(data[0].tipo);
 						$('#idtipo').val(data[0].idtipo);
 						$('#idclassificacao').val(data[0].idclassificacao);
@@ -160,8 +231,23 @@
 						$('#dataLancamento').val(data[0].dataLancamento);
 						$('#qtdEpisodios').val(data[0].qtdEpisodios);
 						$('#qtdTemporadas').val(data[0].qtdTemporadas);
-						$('#generosmidia').val(data[0].generosmidia);
+						$('#generosmidia').val(data[0].generos);
+						
 					});
+					$.getJSON('B_VerMidia_GDisponiveis.php?search=',{pesquisa: $(this).val(), ajax: 'true'}, function(j){
+						var options;
+						for (var i = 0; i < j.length; i++) {
+							options += '<option value="' + j[i].idMidiaGenero + '">' + j[i].nome + '</option>';
+						}	
+						$('#generosdisponiveis').html(options).show();
+					});		
+					$.getJSON('B_VerMidia_GMidia.php?search=',{pesquisa: $(this).val(), ajax: 'true'}, function(j){
+						var options;
+						for (var i = 0; i < j.length; i++) {
+							options += '<option value="' + j[i].idGenero + '">' + j[i].nome + '</option>';
+						}	
+						$('#generosmidia').html(options).show();
+					});							
 				});
 			});
 		</script>				
