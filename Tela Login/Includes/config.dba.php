@@ -3,6 +3,6 @@
 
 	$base = "aulas";
 	$user = "root"; 
-	$pass = "";
+	$pass = "root";
 	$host = "127.0.0.1";
 ?>

@@ -10,12 +10,14 @@
 	}
 	$generos = substr($generos, 0, strlen($generos)-2);
 	if ($generos == '') {$generos = 'NADA INFORMADO';}
-	$query = "select tipomidia.nome as 'tipo', midiaclassificacao.nome as 'classificacao', midia.titulo, midia.duracao, midia.elenco, midia.nacionalidade, midia.sinopse, midia.dataLancamento, midia.qtdEpisodios, midia.qtdTemporadas from midia inner join tipomidia on tipomidia.idTipoMidia = midia.idTipoMidia inner join midiaclassificacao on midiaclassificacao.idMidiaClassificacao = midia.idMidiaClassificacao where midia.idMidia = $lista;";
+	$query = "select tipomidia.nome as 'tipo', tipomidia.idTipoMidia as 'idtipo', midiaclassificacao.nome as 'classificacao', midia.idMidiaClassificacao as 'idclassificacao', midia.titulo, midia.duracao, midia.elenco, midia.nacionalidade, midia.sinopse, midia.dataLancamento, midia.qtdEpisodios, midia.qtdTemporadas from midia inner join tipomidia on tipomidia.idTipoMidia = midia.idTipoMidia inner join midiaclassificacao on midiaclassificacao.idMidiaClassificacao = midia.idMidiaClassificacao where midia.idMidia = $lista;";
 	$result = mysql_query($query,$conexao) or die(mysql_error());
 	
 	while ($row = mysql_fetch_assoc($result) ) {
 		$vetor[] = array(
 			'tipo'	=> $row["tipo"],
+			'idtipo'	=> $row["idtipo"],
+			'idclassificacao'	=> $row["idclassificacao"],
 			'classificacao' => utf8_encode($row["classificacao"]),
 			'titulo' => utf8_encode($row["titulo"]),
 			'duracao' => utf8_encode($row["duracao"]),

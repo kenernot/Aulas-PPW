@@ -18,6 +18,12 @@
 	
 	$sql_genero = "select * from midiagenero;";
 	$query_genero = mysql_query($sql_genero,$conexao);	
+	$super = false;
+	if ($_SESSION["nivel"] == 99) {
+		$super = true;
+	}
+	echo $super
+
  ?>
  		
 <html>
@@ -51,37 +57,60 @@
 					<table align="center" border="0" class="loginTable"> 
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="titulo">Título</td>
-							<td class="tdCadastro" colspan='4'><input type="text" disabled required name="titulo" ID="titulo"  class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro" colspan='4'><input type="text" <?php if (!$super) {echo "disabled";} ?> required name="titulo" ID="titulo"  class="editCadastro" style='width:100%;'></td>
 						</tr>
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="tipo">Tipo:</td>
 							<td class="tdCadastro" width='200'>
-								<input type="text" disabled name="tipo" ID="tipo" disabled class="editCadastro" style='width:100%;'>
+								<?php 
+									if (!$super) {
+										echo "<input type='text' name='tipo' ID='tipo' disabled class='editCadastro' style='width:100%;' >";
+									} else {
+										echo "<select class='comboCadastro' name='idtipo' id='idtipo'>";
+										while ($row = mysql_fetch_array($query_tipo, MYSQL_NUM)) {
+											echo '<option value='.$row[0].'>'.$row[1].'</option>';
+										}
+										echo "</select>";
+									}
+								?>
+								
 							</td>
 							<td class="labelCadastro"><label for="classificacao">Classificação:</td>
 							<td class="tdCadastro">
-								<input type="text" disabled required name="classificacao" ID="classificacao"  class="editCadastro" style='width:100%;'>
+								<?php 
+									if (!$super) {
+										echo "<input type='text' disabled required name='classificacao' ID='classificacao'  class='editCadastro' style='width:100%;'>";
+									} else {
+										echo "<select class='comboCadastro' name='idclassificacao' id='idclassificacao' style='min-width: 90px;'>";
+                                        while ($row = mysql_fetch_array($query_classificacao, MYSQL_NUM)) {
+											echo '<option value='.$row[0].'>'.$row[1].'</option>';
+										}
+										echo "</select>";
+									}
+								?>
+							
+								
 							</td>
 						</tr>
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="temporadas">Temporadas:</td>
-							<td class="tdCadastro"><input type="text" disabled name="qtdTemporadas" ID="qtdTemporadas" disabled class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro"><input type="text" <?php if (!$super) {echo "disabled";} ?> name="qtdTemporadas" ID="qtdTemporadas" <?php if (!$super) {echo "disabled";} ?> class="editCadastro" style='width:100%;'></td>
 							<td class="labelCadastro"><label for="episodios">Episódios:</td>
-							<td class="tdCadastro"><input type="text" disabled name="qtdEpisodios" ID="qtdEpisodios"  class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro"><input type="text" <?php if (!$super) {echo "disabled";} ?> name="qtdEpisodios" ID="qtdEpisodios"  class="editCadastro" style='width:100%;'></td>
 						</tr>
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="duracao">Duração:</td>
-							<td class="tdCadastro"><input type="text" disabled name="duracao" ID="duracao" class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro"><input type="text" <?php if (!$super) {echo "disabled";} ?> name="duracao" ID="duracao" class="editCadastro" style='width:100%;'></td>
 							<td class="labelCadastro"><label for="datalancamento">Lançamento:</td>
-							<td class="tdCadastro"><input type="date" disabled name="dataLancamento" ID="dataLancamento" class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro"><input type="date" <?php if (!$super) {echo "disabled";} ?> name="dataLancamento" ID="dataLancamento" class="editCadastro" style='width:100%;'></td>
 						</tr>
 						<tr class="loginTable_tr">
 							<td class="labelCadastro"><label for="nacionalidade">Nacionalidade:</td>
-							<td class="tdCadastro"><input type="text" disabled name="nacionalidade" ID="nacionalidade" class="editCadastro" style='width:100%;'></td>
+							<td class="tdCadastro"><input type="text" <?php if (!$super) {echo "disabled";} ?> name="nacionalidade" ID="nacionalidade" class="editCadastro" style='width:100%;'></td>
 						</tr>
 						<tr class="loginTable_tr">
 							<td class="labelCadastro" colspan='0' style='text-align:center;'><label for="generosmidia">Gêneros da mídia:</td>
-							<td class="labelCadastro" colspan='2' style='text-align:center;'><input type="text" disabled name="generosmidia" ID="generosmidia" disabled class="editCadastro" style='width:100%;'></td>
+							<td class="labelCadastro" colspan='2' style='text-align:center;'><input type="text" <?php if (!$super) {echo "disabled";} ?> name="generosmidia" ID="generosmidia" <?php if (!$super) {echo "disabled";} ?> class="editCadastro" style='width:100%;'></td>
 							<td class="labelCadastro" colspan='2' style='text-align:center;'></td>
 						</tr>
 						
@@ -90,7 +119,7 @@
 						</tr>
 						<tr>
 							<td class="tdCadastro" colspan='4'>
-								<textarea  disabled rows="6" cols="50" name="elenco" ID="elenco" class="editCadastro" style='width:100%;'></textarea>
+								<textarea  <?php if (!$super) {echo "disabled";} ?> rows="6" cols="50" name="elenco" ID="elenco" class="editCadastro" style='width:100%;'></textarea>
 							</td>
 						</tr>
 						
@@ -99,7 +128,7 @@
 						</tr>
 						<tr>
 							<td class="tdCadastro" colspan='4'>
-								<textarea  disabled rows="8" cols="50" name="sinopse" ID="sinopse" class="editCadastro" style='width:100%;'></textarea>
+								<textarea  <?php if (!$super) {echo "disabled";} ?> rows="8" cols="50" name="sinopse" ID="sinopse" class="editCadastro" style='width:100%;'></textarea>
 							</td>
 						</tr>
 
@@ -120,7 +149,10 @@
 					$.getJSON('B_VerMidia_Mostrar.php?search=',{lista: $('#lista').val()}, function(data){	
 						$('#titulo').val(data[0].titulo);
 						$('#classificacao').val(data[0].classificacao);
+						
 						$('#tipo').val(data[0].tipo);
+						$('#idtipo').val(data[0].idtipo);
+						$('#idclassificacao').val(data[0].idclassificacao);
 						$('#duracao').val(data[0].duracao);
 						$('#elenco').val(data[0].elenco);
 						$('#sinopse').val(data[0].sinopse);
