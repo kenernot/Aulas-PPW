@@ -4,6 +4,7 @@
 	if(!isset($_SESSION["usuario"]) && !isset($_SESSION["nivel"])) { 
 		header("Location: F_Login.php"); 
 	}
+	echo $_SESSION["usuario"];
 ?>
 
 <script language="JavaScript">
