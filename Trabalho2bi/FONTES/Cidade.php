@@ -17,7 +17,7 @@
 
 	$con = new PDO($connectionString, USER,PASS);
 
-	$result = $con->query("SELECT * FROM estado order by nome;");
+	$result = $con->query("SELECT c.idCidade, c.nome, e.sigla FROM cidade c INNER JOIN estado e ON e.idEstado = c.idEstado ORDER BY c.nome LIMIT 100;");
 ?>
 
 <div class="d-flex justify-content-center">
@@ -26,42 +26,53 @@
 		<div class="form-row mt-4">
 			<div class="col-md-12 text-center ">
 				<hr>
-				<p>Cadastro de cidade</p>
-				<hr>
-			</div>
-			
-		</div>
-		<div class="form-row mb-4 d-flex justify-content-center ">
-			<div class="col-md-1 ">
-				<label for="nome" class="ml-2">Nome:</label>
-			</div>
-			<div class="col-md-3 ">
-				<input type="text" maxlength="50" class="form-control bg bg-info text-light" name="nome" id="nome"></input>
-			</div>
-		</div>
-		<div class="form-row my-4 d-flex justify-content-center ">
-			<div class="col-md-1 ">
-				<label for="nome" class="ml-2">Estado:</label>
-			</div>
-			<div class="col-md-3 ">
-				<select class='form-control btn btn-info' name='estado' id='estado'>
-					<?php
-						while ($row = $result-> fetch(PDO::FETCH_OBJ)) {
-							echo '<option value='.$row->idEstado.'</td>'.'<td>'.$row->nome.'</td>';
-						}
-					?>
-                 </select>
-			</div>
-		</div>
-		<div class="form-row d-flex justify-content-center ">
-			<div class="col-md-5 text-center ">
-				<hr>
-				<div class="btn-group btn-block">
-					<a href="/" class="btn btn-success">Cadastrar</a>
-				</div>
+				<p>Index de Cidade</p>
 				<hr>
 			</div>
 		</div>
+		
+		<div id="divListaUsuario" class="">
+
+			<table class="table table-responsive-sm table-striped table-hover table-bordered">
+				<tr class="text-center">
+					<th>
+						ID
+					</th>
+					<th>
+						NOME
+					</th>
+					<th>
+						ESTADO
+					</th>
+					<th>CONTROLES</th>
+				</tr>
+
+				<?php
+					while ($row = $result-> fetch(PDO::FETCH_OBJ)) {
+						echo	"<tr>";
+						echo	"<td>";
+						echo		$row->idCidade;
+						echo	"</td>";
+						echo	"<td>";
+						echo		$row->nome;
+						echo	"</td>";
+						echo	"<td>";
+						echo		$row->sigla;
+						echo	"</td>";
+						echo	"<td>";
+						echo		"<div class='btn-group btn-block'>";
+						echo			"<a href='EditarCidade?id=".$row->idCidade."' class='btn btn-primary'>Editar</a> ";
+						echo			"<a href='ExcluirCidade?id=".$row->idCidade."' class='btn btn-danger'>Excluir</a> ";
+						echo		"</div>";
+						echo	"</td>";
+						echo	"</tr>";
+					}
+				?>
+
+			</table>
+
+		</div>
+		
 	</div>
 </div>
 

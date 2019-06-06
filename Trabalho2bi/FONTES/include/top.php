@@ -6,9 +6,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"> <a class="nav-link" href="Cidade.php">Cidade</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="Estado.php">Estado</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="Usuario.php">Usuario</a> </li>
+				<?php 
+					if (ISSET($_SESSION["nivel"]) && $_SESSION["nivel"] == "9") {
+						echo "<li class='nav-item'> <a class='nav-link' href='Cidade.php'>Cidade</a> </li>";
+						echo "<li class='nav-item'> <a class='nav-link' href='Estado.php'>Estado</a> </li>";
+						echo "<li class='nav-item'> <a class='nav-link' href='Usuario.php'>Usuario</a> </li>";
+					}
+				?>
             </ul>
         </div>
 		
@@ -16,7 +20,10 @@
 			<?php
 				if (ISSET($_SESSION["user"])) {
 					echo $_SESSION["user"]."(".$_SESSION["nivel"].")";
+					echo "<a href='back/B_Logout.php' class='btn btn-danger mr-2 ml-3'>Logout</a>";
+				} else {
+					echo "<a href='Login.php' class='btn btn-success mx-2'>Login</a>";
 				}
-			?>
+			?> 
 		</div>
     </nav>
