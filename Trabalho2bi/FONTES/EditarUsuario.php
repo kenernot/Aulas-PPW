@@ -70,7 +70,7 @@
 					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
-							<input type="text" name="user" id="user" class="form-control" required value="<?php echo $user ?>">
+							<input type="text" name="user" id="user" class="form-control" required size="50" maxlength="50" pattern="^[a-zA-Z]*$" value="<?php echo $user ?>">
 						</div>
 					</div>
 					
@@ -83,7 +83,7 @@
 					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
-							<input type="password" name="senha" id="senha" class="form-control" required>
+							<input type="password" name="senha" id="senha" class="form-control" required size="100" maxlength="100">
 						</div>
 					</div>
 					

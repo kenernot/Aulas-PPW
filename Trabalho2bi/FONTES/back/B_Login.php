@@ -53,8 +53,9 @@ try {
 			)
 		));
 		
+		file_get_contents('../index.php', null, $context);
 		header("Location: ../index.php");
-		$result = file_get_contents('../index.php', null, $context);
+		
 		
 		//
 	} else {

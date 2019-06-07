@@ -19,12 +19,6 @@
         $msg = "Erro ao gravar!";
     }
 	
-	echo $sql;
-	echo "<br>";
-	echo $msg;
-	
-	echo $idUsuario;
-	echo $_SESSION["idUsuario"];
 	
 	if ($idUsuario == $_SESSION["idUsuario"]) {
 		header('Location: B_Logout.php');

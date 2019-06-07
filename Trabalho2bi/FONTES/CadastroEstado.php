@@ -39,7 +39,7 @@
 					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
-							<input type="text" name="nome" id="nome" class="form-control" required>
+							<input type="text" name="nome" id="nome" class="form-control" required  size="50" maxlength="50" required pattern="^[a-zA-Z]*$">
 						</div>
 					</div>
 					
@@ -52,7 +52,7 @@
 					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
-							<input type="text" name="sigla" id="sigla" class="form-control" size="2" maxlength="2" required>
+							<input type="text" name="sigla" id="sigla" class="form-control" size="2" maxlength="2" required pattern="^[a-zA-Z].$">
 						</div>
 					</div>
 					

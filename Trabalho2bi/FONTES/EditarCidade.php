@@ -75,7 +75,7 @@
 					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
-							<input type="text" name="nome" id="nome" class="form-control" required value="<?php echo $nome ?>">
+							<input type="text" name="nome" id="nome" class="form-control" required maxlength="50" size="50" pattern="^[a-zA-Z\s]*$" value="<?php echo $nome ?>">
 						</div>
 					</div>
 					
