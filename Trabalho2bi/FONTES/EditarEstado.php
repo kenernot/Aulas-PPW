@@ -60,7 +60,9 @@
 		<div role="form">
 			<form class="form" method="POST" action="back/B_EditarEstado.php">
 				<div class="form group mx-2">
-				
+					<?php 
+						echo  "<input type='hidden' id='idEstado' name='idEstado' value='".$id."'>";
+					?>
 				
 					<div class="form-row">
 						<div class="col-md-5">

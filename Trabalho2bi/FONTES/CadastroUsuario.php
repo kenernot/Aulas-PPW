@@ -47,12 +47,12 @@
 					
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="Senha" class="h6">SENHA</label>
+							<label for="senha" class="h6">SENHA</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
-							<input type="password" name="Senha" id="Senha" class="form-control" required>
+							<input type="password" name="senha" id="senha" class="form-control" required>
 						</div>
 					</div>
 					

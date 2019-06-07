@@ -59,7 +59,7 @@
 		<hr />
 		<div role="form">
 			<form class="form" method="POST" action="back/B_ExcluirUsuario.php">
-				<input type="hidden" name="idUsuario" id="idUsuario">
+				<input type="hidden" name="idUsuario" id="idUsuario" value="<?php echo $get; ?>">
 				<div class="form group mx-2">
 					<div class="form-row">
 						<div class="col-md-5">

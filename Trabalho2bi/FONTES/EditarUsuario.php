@@ -17,7 +17,6 @@
 
 	$con = new PDO($connectionString, USER,PASS);
 	
-	
 	$get = $_GET["id"];
 	preg_match('/^[0-9]*$/', $get, $matches, PREG_OFFSET_CAPTURE);
 	
@@ -60,7 +59,9 @@
 		<div role="form">
 			<form class="form" method="POST" action="back/B_EditarUsuario.php">
 				<div class="form group mx-2">
-				
+					<?php 
+						echo  "<input type='hidden' id='idUsuario' name='idUsuario' value='".$id."'>";
+					?>
 				
 					<div class="form-row">
 						<div class="col-md-5">
@@ -77,12 +78,12 @@
 					
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="Senha" class="h6">SENHA</label>
+							<label for="senha" class="h6">SENHA</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
-							<input type="password" name="Senha" id="Senha" class="form-control" required>
+							<input type="password" name="senha" id="senha" class="form-control" required>
 						</div>
 					</div>
 					

@@ -57,7 +57,7 @@
 					</div>
 					<div class="form-row">
 						<div class="col-md-5">
-							<select id="estado" name="estado" class="form-control" required>
+							<select id="idEstado" name="idEstado" class="form-control" required>
 								<?php
 									while ($row = $result-> fetch(PDO::FETCH_OBJ)) {
 										echo "<option value='".$row->idEstado."'>".$row->sigla."</option>";

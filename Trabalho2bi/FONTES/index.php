@@ -8,6 +8,9 @@
 		header("Location: Login.php"); 
 		exit; 
 	} 
+	if(ISSET($_POST["Erro1"])) {
+		$erro = $_POST["Erro1"];
+	}
 ?>
 
 <html>
@@ -22,12 +25,12 @@
 	<body>
 	
 		<?php
-			include("include/top.php");
-		?>
-	
-	
-		<?php
-			include("include/bottom.php");
+			if (!ISSET($_POST["Erro1"])) {
+				include("include/top.php");
+				include("include/bottom.php");
+			} else {
+				echo $erro;
+			}
 		?>
 		
 	</body>
