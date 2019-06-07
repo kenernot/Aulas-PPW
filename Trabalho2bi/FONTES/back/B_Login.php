@@ -38,26 +38,7 @@ try {
 	
 	
 	if ($deu) {
-		//header("Location: ../index.php"); 
-		//
-		$content = http_build_query(array(
-			'Erro1' => 'Errado1',
-			'Erro2' => 'Errado2',
-			'Erro3' => 'Errado3',
-		));
-  
-		$context = stream_context_create(array(
-			'http' => array(
-				'method'  => 'POST',
-				'content' => $content,
-			)
-		));
-		
-		file_get_contents('../index.php', null, $context);
 		header("Location: ../index.php");
-		
-		
-		//
 	} else {
 		header("Location: ../Login.php"); 
 	}		
