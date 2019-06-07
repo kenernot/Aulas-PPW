@@ -16,8 +16,12 @@
 	include("include/connection/config.php");
 
 	$con = new PDO($connectionString, USER,PASS);
-
-	$result = $con->query("SELECT c.idCidade, c.nome, e.sigla FROM cidade c INNER JOIN estado e ON e.idEstado = c.idEstado ORDER BY c.nome LIMIT 100;");
+	$sql = "SELECT c.idCidade, c.nome, e.sigla FROM cidade c INNER JOIN estado e ON e.idEstado = c.idEstado ORDER BY c.nome LIMIT 100;";
+	if (ISSET($_GET["Pesquisa"])) {
+		$id = " ";
+		$sql = "SELECT c.idCidade, c.nome, e.sigla FROM cidade c INNER JOIN estado e ON e.idEstado = c.idEstado WHERE $id c.nome like '%".$_GET["Pesquisa"]."%' ORDER BY c.nome LIMIT 100;";
+	}
+	$result = $con->query($sql);
 ?>
 
 <div class="d-flex justify-content-center">
@@ -26,10 +30,34 @@
 		<div class="form-row mt-4">
 			<div class="col-md-12 text-center ">
 				<hr>
-				<p>Index de Cidade</p>
+				<p  class="h3">Index de Cidade</p>
 				<hr>
 			</div>
 		</div>
+		
+		<hr />
+
+		<div class="row	">
+			<div class="col-2">
+				<div class="btn-group btn-block">
+					<a href="CadastroCidade.php" class="btn btn-success">Novo</a>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<form action="Cidade.php" method="GET">
+					<div class="input-group">
+						<div class="col-4 offset-6">
+							<input type="text" name="Pesquisa" id="Pesquisa" class="form-control ">
+						</div>
+						<div class="col-2 btn-group btn-block">
+							<input type="submit" value="Pesquisar" class="btn btn-outline-dark">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<hr />
 		
 		<div id="divListaUsuario" class="">
 
