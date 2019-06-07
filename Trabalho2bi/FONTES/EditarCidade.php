@@ -27,11 +27,16 @@
 	if (count($matches) > 0) {
 		$id = $_GET["id"];
 	} else {
-		header("Location: index.php");
+		header("Location: Erro.php");
 	}
 	
 	$sql = "SELECT idCidade, nome, idEstado FROM cidade WHERE idCidade=$get;";
 	$result = $con->query($sql);
+	$numRows = $result->rowCount();
+	
+	if ($numRows == 0) {
+		header("Location: Erro.php");
+	}
 	
 	$idCidade = "";
 	$nome = "";
@@ -49,7 +54,7 @@
 		<div class="form-row mt-4">
 			<div class="col-md-12 text-center ">
 				<hr>
-				<p  class="h3">Cadastro de Cidade</p>
+				<p  class="h3">Editar cidade</p>
 				<hr>
 			</div>
 		</div>

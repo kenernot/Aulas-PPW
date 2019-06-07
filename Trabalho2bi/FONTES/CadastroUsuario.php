@@ -57,6 +57,12 @@
 					</div>
 					
 					
+					
+					<div class="form-row">
+						<div class="col-md-5">
+							<label for="nivel" class="h6">Nivel</label>
+						</div>
+					</div>
 					<div class="form-row  mb-3">
 						<div class="col-md-5">
 							<select id="nivel" name="nivel" class="form-control">
