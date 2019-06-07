@@ -34,7 +34,7 @@
 				
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="user" class="h6">Login</label>
+							<label for="user" class="h6">LOGIN</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">
@@ -47,7 +47,7 @@
 					
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="Senha" class="h6">Senha</label>
+							<label for="Senha" class="h6">SENHA</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">
@@ -60,7 +60,7 @@
 					
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="nivel" class="h6">Nivel</label>
+							<label for="nivel" class="h6">NIVEL</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">

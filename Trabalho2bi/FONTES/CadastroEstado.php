@@ -34,7 +34,7 @@
 				
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="nome" class="h6">Nome</label>
+							<label for="nome" class="h6">NOME</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">
@@ -47,7 +47,7 @@
 					
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="sigla" class="h6">Sigla</label>
+							<label for="sigla" class="h6">SIGLA</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">

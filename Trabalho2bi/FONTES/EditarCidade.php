@@ -61,7 +61,7 @@
 		
 		<hr />
 		<div role="form">
-			<form class="form" method="POST" action="back/B_CadastroCidade.php">
+			<form class="form" method="POST" action="back/B_EditarCidade.php">
 				<div class="form group mx-2">
 				
 					<?php 
@@ -70,7 +70,7 @@
 					
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="nome" class="h6">Nome</label>
+							<label for="nome" class="h6">NOME</label>
 						</div>
 					</div>
 					<div class="form-row  mb-3">
@@ -83,7 +83,7 @@
 					
 					<div class="form-row">
 						<div class="col-md-5">
-							<label for="nome" class="h6">Estado</label>
+							<label for="nome" class="h6">ESTADO</label>
 						</div>
 					</div>
 					<div class="form-row">
