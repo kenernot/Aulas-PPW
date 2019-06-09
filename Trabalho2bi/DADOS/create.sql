@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS trabalho2bi;
-CREATE DATABASE trabalho2bi;
+CREATE DATABASE `trabalho2bi` /*!40100 COLLATE 'utf8_general_ci' */;
 USE trabalho2bi;
 
 -- Criação de tabela
