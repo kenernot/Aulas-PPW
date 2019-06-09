@@ -2,8 +2,11 @@
 	//envio o charset para evitar problemas com acentos
 	header("Content-Type: text/html; charset=UTF-8");
 
-	$nome = filter_input(INPUT_GET, 'nome');
-	$sigla = filter_input(INPUT_GET, 'sigla');
+	//$nome = filter_input(INPUT_GET, 'nome');
+	//$sigla = filter_input(INPUT_GET, 'sigla');
+	$nome = $_POST['nome'];
+	$sigla = $_POST['sigla'];
+	
 	$nome = strtoupper($nome);
 	$sigla = strtoupper($sigla);
 	
@@ -24,5 +27,5 @@
 		'duplicado'	=> $duplicado
 	);
 	
-	
-	echo(json_encode($vetor));
+	echo $duplicado;
+	//echo(json_encode($vetor));

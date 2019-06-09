@@ -29,6 +29,7 @@
 				var x = document.getElementById("rowerro");
 				x.style.display = "block";
 				
+				/*
 				//Não funcionando vvv
 				var $text = 'back/VerificaEstadoDuplicado.php?nome='+$('#nome').val()+'&sigla='+$('#sigla').val();
 				var $duplicated = '-1';
@@ -42,25 +43,36 @@
 				});
 				//^^ 
 				
+				
 				//alert($duplicated);
 				//status.done(function () {
 				//	alert($duplicated);
 				//)};
-					if (nome == "") {
-						document.getElementById("erro").innerHTML = "Preencha o campo nome!";
-						return false;
-					} else if (nome.length > 50) {
-						document.getElementById("erro").innerHTML = "O campo nome pode conter no máximo 50 caracteres!";
-						return false;
-					} else if (sigla.length != 2) {
-						document.getElementById("erro").innerHTML = "O campo sigla tem que conter 2 caracteres [AA]!";
-						return false;
-					} else if ($duplicated == '1') {
-						document.getElementById("erro").innerHTML = "Cadastro duplicado!";
-					} else {
-						x.style.display = "none";
-						return true;
+				
+				*/
+				
+				$.post('back/VerificaEstadoDuplicado.php',{nome: nome}, function(data){
+					alert(data);
+					if (data != '0') {
+						alert('deu ruim');
 					}
+				)};
+				
+				if (nome == "") {
+					document.getElementById("erro").innerHTML = "Preencha o campo nome!";
+					return false;
+				} else if (nome.length > 50) {
+					document.getElementById("erro").innerHTML = "O campo nome pode conter no máximo 50 caracteres!";
+					return false;
+				} else if (sigla.length != 2) {
+					document.getElementById("erro").innerHTML = "O campo sigla tem que conter 2 caracteres [AA]!";
+					return false;
+				} else if ($duplicated == '1') {
+					document.getElementById("erro").innerHTML = "Cadastro duplicado!";
+				} else {
+					x.style.display = "none";
+					return true;
+				}
 				
 			}
 		</script>
