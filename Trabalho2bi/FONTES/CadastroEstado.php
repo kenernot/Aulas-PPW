@@ -9,54 +9,24 @@
 		// Usuário não logado! Redireciona para a página de login 
 		header("Location: Login.php"); 
 		exit; 
-	} 
+	}
+	
+	$erro = '-1';
+	if (isset($_GET['erro'])) {
+		$erro = $_GET['erro'];
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
 
 	<head>
 		<?php include("include/head.php"); ?>
-		<!--<script src="js/estado.js"></script>-->
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<script type="text/javascript">
-				google.load("jquery", "1.4.2");
-			</script>
-		</script>
 		<script>
 			function validar() {
 				var nome = document.forms["form1"]["nome"].value;
 				var sigla = document.forms["form1"]["sigla"].value;
 				var x = document.getElementById("rowerro");
 				x.style.display = "block";
-				
-				/*
-				//Não funcionando vvv
-				var $text = 'back/VerificaEstadoDuplicado.php?nome='+$('#nome').val()+'&sigla='+$('#sigla').val();
-				var $duplicated = '-1';
-				
-				var status = $.getJSON($text, function(data){	
-					if (data[0].duplicado == '1') {
-						$duplicated = '1';
-					} else {
-						$duplicated = '0';
-					}
-				});
-				//^^ 
-				
-				
-				//alert($duplicated);
-				//status.done(function () {
-				//	alert($duplicated);
-				//)};
-				
-				*/
-				
-				$.post('back/VerificaEstadoDuplicado.php',{nome: nome}, function(data){
-					alert(data);
-					if (data != '0') {
-						alert('deu ruim');
-					}
-				)};
 				
 				if (nome == "") {
 					document.getElementById("erro").innerHTML = "Preencha o campo nome!";
@@ -67,8 +37,6 @@
 				} else if (sigla.length != 2) {
 					document.getElementById("erro").innerHTML = "O campo sigla tem que conter 2 caracteres [AA]!";
 					return false;
-				} else if ($duplicated == '1') {
-					document.getElementById("erro").innerHTML = "Cadastro duplicado!";
 				} else {
 					x.style.display = "none";
 					return true;
@@ -96,9 +64,9 @@
 					<form onsubmit="return validar()" class="form" method="POST" action="back/B_CadastroEstado.php" name="form1" id="form1" >
 						<div class="form group mx-2">
 						
-							<div class="form-row" name="rowerro" id="rowerro" style="display: none;">
+							<div class="form-row" name="rowerro" id="rowerro" <?php if ($erro == '1' or $erro == '2') { echo "style='display: block;'";} else {echo "style='display: none;'";} ?>>
 								<div class="alert alert-danger" role="alert">
-								  <p id="erro">Teste</p>
+								  <p id="erro"><?php if ($erro == '1') { echo "Dados inválidos inseridos!";} else if ($erro == '2') { echo "Cadastro já existe!";}  ?></p>
 								</div>
 							</div>
 						
@@ -109,7 +77,7 @@
 							</div>
 							<div class="form-row  mb-3">
 								<div class="col-md-5">
-									<input type="text" name="nome" id="nome" class="form-control" onkeyup="validar()"  required size="50" maxlength="50" pattern="^[a-zA-Z]*$">
+									<input type="text" name="nome" id="nome" class="form-control" onkeyup="validar()"  required size="50" maxlength="50" pattern="^[a-zA-Z\ ]*$">
 								</div>
 							</div>
 							
@@ -122,7 +90,7 @@
 							</div>
 							<div class="form-row  mb-3">
 								<div class="col-md-5">
-									<input type="text" name="sigla" id="sigla" class="form-control" onkeyup="validar()"  required size="2" maxlength="2"  pattern="^[a-zA-Z].$">
+									<input type="text" name="sigla" id="sigla" class="form-control" onkeyup="validar()"  required size="2" maxlength="2"  pattern="^[a-zA-Z]{2}$">
 								</div>
 							</div>
 							
