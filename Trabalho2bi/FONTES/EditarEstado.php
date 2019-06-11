@@ -146,7 +146,7 @@
 			</div>
 		</div>
 	</body>
-</html>
 <?php
 	include("include/bottom.php");
 ?>
+</html>

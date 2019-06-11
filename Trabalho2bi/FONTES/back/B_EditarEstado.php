@@ -4,9 +4,6 @@
 	$nome = strtoupper($_POST["nome"]);
 	$sigla = strtoupper($_POST["sigla"]);
 	
-
-	
-	
 	
 	
 	$valido = true;

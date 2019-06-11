@@ -8,19 +8,40 @@
 	include("../include/connection/config.php"); 
 	$con = new PDO($connectionString, USER,PASS);	
 	
-	//Executa processa
+	$estadoExists = true;
+	$sql = "SELECT NULL FROM estado WHERE idEstado = $idEstado LIMIT 1;";
 	
-    $sql = "UPDATE cidade SET nome = '$nome', idEstado = $idEstado WHERE idCidade = $idCidade;";
-      
-    if($con->query($sql)){
-        $msg = "Gravado com sucesso!";
-    }else{
-        $msg = "Erro ao gravar!";
-    }
+	$result = $con->query($sql);
 	
-	echo $sql;
-	echo "<br>";
-	echo $msg;
+	if ($result->rowCount() == 0) {
+		$estadoExists = false;
+	}
+
+	$valido = true;
+	if (strlen($nome) > 50 or strlen($nome) == 0 or !preg_match("/^[a-zA-Z\ ]*$/",$nome) or !$estadoExists) {
+		$valido = false;
+		header("Location: ../EditarCidade.php?erro=1&id=$idCidade");
+	} else if ($valido) {
+		
+		$sql = "SELECT NULL FROM cidade WHERE nome='$nome' AND idEstado=$idEstado AND idCidade != $idCidade LIMIT 1;";
+		
+		$result = $con->query($sql);
+		
+		if ($result->rowCount() > 0) {
+			$valido = false;
+			header("Location: ../EditarCidade.php?erro=2&id=$idCidade");
+		} else {
 	
-	header('Location: ../Cidade.php');
+			//Executa processa
+			
+			$sql = "UPDATE cidade SET nome = '$nome', idEstado = $idEstado WHERE idCidade = $idCidade;";
+			  
+			if($con->query($sql)){
+				$msg = "Gravado com sucesso!";
+			}else{
+				$msg = "Erro ao gravar!";
+			}
+			header('Location: ../Cidade.php');
+		}
+	}
 ?>
