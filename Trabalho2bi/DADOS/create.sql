@@ -24,6 +24,14 @@ CREATE TABLE usuario(
 	nivel CHAR(1)
 );
 
+CREATE TABLE funcionario(
+	idFuncionario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	matricula VARCHAR(70),
+	nome VARCHAR(70),
+	rg VARCHAR(20),
+	departamento VARCHAR(45)
+);
+
 -- Inserção de registros estado
 
 INSERT INTO estado(nome,sigla) VALUES('PARANA','PR');
