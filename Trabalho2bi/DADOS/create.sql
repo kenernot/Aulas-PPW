@@ -51,3 +51,7 @@ INSERT INTO cidade(nome,idEstado) VALUES('ERECHIM',4);
 -- Inserção de registros usuario
 
 INSERT INTO usuario(user,password,nivel) VALUES('admin',MD5('admin'),'9');
+
+-- Inserção de registros funcionário
+
+INSERT INTO usuario(matricula,nome,rg,departamento) VALUES('225882016','YOHAAN CAJOBI','05021998','VENDAS');

@@ -11,6 +11,7 @@
 						echo "<li class='nav-item'> <a class='nav-link' href='Cidade.php'>Cidade</a> </li>";
 						echo "<li class='nav-item'> <a class='nav-link' href='Estado.php'>Estado</a> </li>";
 						echo "<li class='nav-item'> <a class='nav-link' href='Usuario.php'>Usuario</a> </li>";
+						echo "<li class='nav-item'> <a class='nav-link' href='Funcionario.php'>Funcionário</a> </li>";
 					}
 				?>
             </ul>
