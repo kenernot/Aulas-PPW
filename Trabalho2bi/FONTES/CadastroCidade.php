@@ -16,11 +16,17 @@
 		$erro = $_GET['erro'];
 	}
 
-	include("include/connection/config.php");
-
-	$con = new PDO($connectionString, USER,PASS);
-	$sql = "SELECT * FROM estado ORDER BY sigla ASC;";
-	$result = $con->query($sql);
+	//include("include/connection/config.php");
+	include("factory/ConexaoFactory.php");
+	
+	try {
+		$fac = new ConexaoFactory();
+		$con = $fac->getConexao();
+		$sql = "SELECT * FROM estado ORDER BY sigla ASC;";
+		$result = $con->query($sql);
+	} catch (Exception $e) {
+		echo "ERRO: ".$e->getMessage();	
+	}
 ?>
 <!DOCTYPE HTML>
 <html>

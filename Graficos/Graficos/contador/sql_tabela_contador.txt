@@ -1,0 +1,4 @@
+
+CREATE TABLE `contador` (
+  `valor` int(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;

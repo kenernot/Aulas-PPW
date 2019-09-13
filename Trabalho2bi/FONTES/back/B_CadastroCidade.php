@@ -5,7 +5,7 @@
 	
 	//Valida dados
 	include("../include/connection/config.php"); 
-	$con = new PDO($connectionString, USER,PASS);	
+	$con = new PDO(CONNECTIONSTRING, USER,PASS);	
 	
 	$estadoExists = true;
 	$sql = "SELECT NULL FROM estado WHERE idEstado = $idEstado LIMIT 1;";
